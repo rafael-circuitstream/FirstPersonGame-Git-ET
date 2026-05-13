@@ -6,6 +6,7 @@ public class CustomPhysicsModule : MonoBehaviour
     [SerializeField] private LayerMask walkableLayerMask;
     [SerializeField] private float floorCheckRadius;
     public Vector3 upDownForce;
+    
 
     void Start()
     {
@@ -17,7 +18,11 @@ public class CustomPhysicsModule : MonoBehaviour
         
         if( Physics.CheckSphere(transform.position, floorCheckRadius, walkableLayerMask) )
         {
-            upDownForce.y = 0;
+            if(upDownForce.y < 0)
+            {
+                upDownForce.y = 0;
+            }
+            
         }
         else
         {

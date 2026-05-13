@@ -17,6 +17,10 @@ public class PlayerInput : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+
         firstPersonCamera = GetComponentInChildren<Camera>();
 
         characterController = GetComponent<CharacterController>();       

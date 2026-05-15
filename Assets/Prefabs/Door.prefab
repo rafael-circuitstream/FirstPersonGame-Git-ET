@@ -183,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorControl
   triggerGameObject: {fileID: 8875884037954954488}
   doorRenderer: {fileID: 1438665424740810325}
-  unlocked: 1
+  unlocked: 0
 --- !u!1 &8875884037954954488
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 1484225343241077774}
   - component: {fileID: 5188159121125820015}
   - component: {fileID: 2507614404234447301}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

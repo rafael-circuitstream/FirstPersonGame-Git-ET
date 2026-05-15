@@ -25,6 +25,11 @@ public class DoorControl : MonoBehaviour
         doorRenderer.material.color = Color.blue;
     }
 
+    public void DelayedLock(float delayed)
+    {
+        Invoke("LockDoor", delayed);
+    }
+
     public void LockDoor()
     {
         unlocked = false;

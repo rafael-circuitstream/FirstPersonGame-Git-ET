@@ -2,12 +2,16 @@ using UnityEngine;
 
 public class ShootingModule : MonoBehaviour
 {
-    [SerializeField] private Projectile projectilePrefab;
+    [SerializeField] private ProjectilePooling projectilePool;
     [SerializeField] private Transform weaponTip;
 
 
     public void Shoot()
     {
-        Instantiate(projectilePrefab, weaponTip.position, weaponTip.rotation);
+        Projectile pooledProjectile = projectilePool.RetrieveFromAvailableList();
+        pooledProjectile.transform.position = weaponTip.position;
+        pooledProjectile.transform.rotation = weaponTip.rotation;
+        pooledProjectile.gameObject.SetActive(true);
+        pooledProjectile.StartBullet();
     }
 }

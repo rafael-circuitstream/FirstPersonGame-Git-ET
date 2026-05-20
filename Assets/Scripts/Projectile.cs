@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public ProjectilePooling poolParent;
+
     [SerializeField] private float projectileSpeed;
+    
     private Rigidbody projectileRigidbody;
 
     private void Awake()
@@ -10,21 +13,22 @@ public class Projectile : MonoBehaviour
         projectileRigidbody = GetComponent<Rigidbody>();
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Start()
+    public void StartBullet()
     {
         Invoke("ResetBullet", 10f);
         projectileRigidbody.linearVelocity = transform.forward * projectileSpeed;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void ResetBullet()
     {
-        Destroy(gameObject);
+        projectileRigidbody.linearVelocity = Vector3.zero;
+        projectileRigidbody.angularVelocity = Vector3.zero;
+        CancelInvoke();
+        poolParent.SendBackToAvailable(this);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        ResetBullet();
     }
 }

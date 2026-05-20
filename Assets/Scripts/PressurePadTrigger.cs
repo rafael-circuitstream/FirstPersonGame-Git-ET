@@ -6,16 +6,15 @@ public class PressurePadTrigger : MonoBehaviour
     public UnityEvent OnPressureActivate;
     public UnityEvent OnPressureDeactive;
 
-
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         Debug.Log("Trigger is activating");
-
         OnPressureActivate.Invoke();
     }
 
-    private void OnTriggerExit(Collider other)
+    protected virtual void OnTriggerExit(Collider other)
     {
+
         Debug.Log("Trigger is deactivating");
 
         OnPressureDeactive.Invoke();

@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aa6fae2ada87554e84560ec78922a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShootingModule
-  projectilePool: {fileID: 1368969357}
+  projectilePrefab: {fileID: 7146057803928453855, guid: 2d01c8041be2b754fa1ffb28a5e1c54d, type: 3}
   weaponTip: {fileID: 1773245107}
 --- !u!114 &298629869
 MonoBehaviour:
@@ -1144,7 +1144,7 @@ GameObject:
   - component: {fileID: 1368969358}
   - component: {fileID: 1368969357}
   m_Layer: 0
-  m_Name: Player Projectile Pool
+  m_Name: Projectile Pool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1164,8 +1164,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProjectilePooling
   poolAmount: 20
   prefabToPool: {fileID: 7146057803928453855, guid: 2d01c8041be2b754fa1ffb28a5e1c54d, type: 3}
-  availableProjectiles: []
-  usedProjectiles: []
 --- !u!4 &1368969358
 Transform:
   m_ObjectHideFlags: 0

@@ -19,12 +19,14 @@ public class PlayerInteractorModule : MonoBehaviour
         if( Physics.Raycast(ray, out hitInfo, interactionRange, interactableLayers))
         {
             Debug.Log("Press RIGHT MOUSE CLICK to interact");
-            selectedObject = hitInfo.collider.gameObject; //here i have an object selected
+            selectedObject = hitInfo.collider.gameObject; 
+            //here i have an object selected
+            //DISPLAY UI message
         }
         else
         {
             selectedObject = null; //here i don't have an object selected
-            //nothing is able to press F on
+            //HIDE UI message
         }
     }
 

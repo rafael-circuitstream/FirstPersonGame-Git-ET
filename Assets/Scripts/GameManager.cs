@@ -19,9 +19,14 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-        }
-        
+        }  
     }
+
+    public PlayerInput GetPlayer()
+    {
+        return playerInput;
+    }
+
     private void Update()
     {
         timer += Time.deltaTime;

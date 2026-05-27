@@ -21,6 +21,10 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }  
     }
+    private void Start()
+    {
+        playerInput.GetComponent<HealthModule>().OnHealthZero += GameOver;
+    }
 
     public PlayerInput GetPlayer()
     {
@@ -43,5 +47,11 @@ public class GameManager : MonoBehaviour
         playerInput.enabled = true;
     }
 
-
+    private void GameOver()
+    {
+        LockPlayerInput();
+        //REGISTER SCORE
+        //RESPAWN PLAYER
+        //RESPAWN ENEMIES
+    }
 }

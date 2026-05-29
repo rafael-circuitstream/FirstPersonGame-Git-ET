@@ -1,15 +1,16 @@
 using UnityEngine;
-
+using System;
 public class PlayerInteractorModule : MonoBehaviour
 {
     [SerializeField] private Transform interactionRayOrigin;
     [SerializeField] private float interactionRange;
     [SerializeField] private LayerMask interactableLayers;
 
+    public Action<GameObject> OnNewInteractionFound;
+
     private GameObject selectedObject;
     private Interactable pickedUpObject;
 
-    // Update is called once per frame
     void Update()
     {
         Ray ray = new Ray(interactionRayOrigin.position, interactionRayOrigin.forward * interactionRange);
@@ -18,15 +19,25 @@ public class PlayerInteractorModule : MonoBehaviour
 
         if( Physics.Raycast(ray, out hitInfo, interactionRange, interactableLayers))
         {
-            Debug.Log("Press RIGHT MOUSE CLICK to interact");
-            selectedObject = hitInfo.collider.gameObject; 
-            //here i have an object selected
-            //DISPLAY UI message
+            
+            if(selectedObject != hitInfo.collider.gameObject)
+            {
+                selectedObject = hitInfo.collider.gameObject;
+
+                OnNewInteractionFound?.Invoke(selectedObject);
+            }
+
+
         }
         else
         {
-            selectedObject = null; //here i don't have an object selected
-            //HIDE UI message
+
+            if(selectedObject != null)
+            {
+                selectedObject = null;
+                OnNewInteractionFound?.Invoke(null);
+            }
+
         }
     }
 
@@ -40,6 +51,7 @@ public class PlayerInteractorModule : MonoBehaviour
 
             if(interaction is InteractablePickUp)
             {
+                OnNewInteractionFound?.Invoke(null);
                 pickedUpObject = interaction;
                 pickedUpObject.transform.SetParent(interactionRayOrigin);
             }

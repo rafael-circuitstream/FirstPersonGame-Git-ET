@@ -22,7 +22,7 @@ public class DoorControl : MonoBehaviour
     {
         unlocked = true;
         triggerGameObject.SetActive(true);
-        doorRenderer.material.color = Color.blue;
+        //doorRenderer.material.color = Color.blue;
     }
 
     public void DelayedLock(float delayed)
@@ -34,6 +34,6 @@ public class DoorControl : MonoBehaviour
     {
         unlocked = false;
         triggerGameObject.SetActive(false);
-        doorRenderer.material.color = Color.red;
+        //doorRenderer.material.color = Color.red;
     }
 }

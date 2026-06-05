@@ -45,7 +45,7 @@ Animator:
   m_GameObject: {fileID: 4972167997025983191}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8376e4aa114eac34ea8720c083cdee2e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 21b18806ab005844885e82e20aa224b1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -68,6 +68,7 @@ GameObject:
   - component: {fileID: 4972167997025879801}
   - component: {fileID: 4972167997029304025}
   - component: {fileID: 4972167997028172825}
+  - component: {fileID: 6308664624546200828}
   m_Layer: 0
   m_Name: Door_Left
   m_TagString: Untagged
@@ -147,6 +148,27 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6308664624546200828
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4972167997025983193}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.17499025, y: 2.5377355, z: 1.8645792}
+  m_Center: {x: 0.007943881, y: -0.14994754, z: -0.36855546}
 --- !u!1 &4972167997025983197
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,6 +270,7 @@ GameObject:
   - component: {fileID: 4972167997025879807}
   - component: {fileID: 4972167997029304031}
   - component: {fileID: 4972167997028172831}
+  - component: {fileID: 904061231466709694}
   m_Layer: 0
   m_Name: Door_Right
   m_TagString: Untagged
@@ -327,3 +350,24 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &904061231466709694
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4972167997025983199}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.017500002, y: 0.25377354, z: 0.1842785}
+  m_Center: {x: 0.00000023841858, y: 8.881784e-16, z: -0.000000055879354}
